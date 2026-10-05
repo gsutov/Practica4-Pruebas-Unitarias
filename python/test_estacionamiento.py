@@ -91,18 +91,16 @@ def test_9(sistema):
 def test_10(sistema):
     # Arrange
     minutos = -3
-    # Act
-    resultado = sistema.calcular_total(minutos, "normal", False)
-    # Assert
-    assert resultado == ERROR
+    # Act y assert
+    with pytest.raises(ValueError):
+        sistema.calcular_total(minutos, "normal", False)
 
 def test_11(sistema):
     # Arrange
     minutos = 47
-    # Act
-    resultado = sistema.calcular_total(minutos, "Batman", False)
-    # Assert
-    assert resultado == ERROR
+    # Act y assert
+    with pytest.raises(ValueError):
+        sistema.calcular_total(minutos, "Batman", False)
 
 
 #Interacción entre reglas:
