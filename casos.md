@@ -3,7 +3,7 @@
 |---|---|---|---|---|
 | 1 | 7 min, normal, boleto no perdido | $0.00 | R5 | De 1 a 15 minutos es gratis |
 | 2 | 71 min, normal, boleto no perdido | $35.00 | R7 | $20 de la primer hora más $15 del inicio de la segunda |
-| 3 | 23 min, normal, boleto n operdido | $20.00 | R6 | De 16 a 60 minutos son $20 |
+| 3 | 23 min, normal, boleto no perdido | $20.00 | R6 | De 16 a 60 minutos son $20 |
 
 
 ### Casos frontera
@@ -17,10 +17,10 @@
 | 9 | 121 min, normal, boleto no perdido | $50.00 | R7 | $20 de la primer hora más $15 de la segunda más 15 del inicio de la tercera |
 
 ### Entradas inválidas
-| Casos | Entrada | Resultado Esperado | Regla | Justificación |
+| Casos | Entrada | Resultado Esperado | Reglas | Justificación |
 |---|---|---|---|---|
-| 10 | -3 min, normal, boleto no perdido | ERROR | R10 | Minutos negativos |
-| 11 | 47 min, Batman, boleto no perdido | ERROR | R11 | Tipo de cliente no válido |
+| 10 | -3 min, normal, boleto no perdido | ERROR | R1 y R10 | Minutos negativos |
+| 11 | 47 min, Batman, boleto no perdido | ERROR | R2 y R11 | Tipo de cliente no válido |
 
 #### Interacción entre reglas
 | Casos | Entrada | Resultado Esperado | Reglas | Justificación |
