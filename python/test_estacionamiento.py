@@ -175,6 +175,20 @@ def test_0_minutos_boleto_perdido(sistema):
     # Assert
     assert resultado == pytest.approx(300.0)
 
+@pytest.mark.parametrize("minutos, esperado", [
+    (0, 0.0),
+    (15, 0.0),
+    (16, 20.0),
+    (60, 20.0),
+    (61, 35.0),
+    (121, 50.0),
+])
+
+# Casos frontera parametrizados
+def test_fronteras_minutos_normal(sistema, minutos, esperado):
+    resultado = sistema.calcular_total(minutos, "normal", False)
+    assert resultado == pytest.approx(esperado)
+
 
 # TODO:
 # 1. Agregue casos normales.
