@@ -19,7 +19,7 @@ def test_7_minutos_gratis(sistema):
     # Act
     resultado = sistema.calcular_total(minutos, "normal", False)
     # Assert
-    assert resultado == 0.0
+    assert resultado == pytest.approx(0.0)
 
 def test_71_minutos_35(sistema):
     #Caso 2
@@ -29,7 +29,7 @@ def test_71_minutos_35(sistema):
     # Act
     resultado = sistema.calcular_total(minutos, "normal", False)
     # Assert
-    assert resultado == 35.0
+    assert resultado == pytest.approx(35.0)
 
 def test_23_minutos_20(sistema):
     #Caso 3
@@ -39,7 +39,7 @@ def test_23_minutos_20(sistema):
     # Act
     resultado = sistema.calcular_total(minutos, "normal", False)
     # Assert
-    assert resultado == 20.0
+    assert resultado == pytest.approx(20.0)
 
 
 #Casos frontera:
@@ -52,7 +52,7 @@ def test_0_minutos_gratis(sistema):
     # Act
     resultado = sistema.calcular_total(minutos, "normal", False)
     # Assert
-    assert resultado == 0.0
+    assert resultado == pytest.approx(0.0)
 
 def test_15_minutos_gratis(sistema):
     #Caso 5
@@ -62,7 +62,7 @@ def test_15_minutos_gratis(sistema):
     # Act
     resultado = sistema.calcular_total(minutos, "normal", False)
     # Assert
-    assert resultado == 0.0
+    assert resultado == pytest.approx(0.0)
 
 def test_16_minutos_costo_20(sistema):
     #Caso 6
@@ -72,7 +72,7 @@ def test_16_minutos_costo_20(sistema):
     # Act
     resultado = sistema.calcular_total(minutos, "normal", False)
     # Assert
-    assert resultado == 20.0
+    assert resultado == pytest.approx(20.0)
 
 def test_60_minutos_costo_20(sistema):
     #Caso 7
@@ -82,7 +82,7 @@ def test_60_minutos_costo_20(sistema):
     # Act
     resultado = sistema.calcular_total(minutos, "normal", False)
     # Assert
-    assert resultado == 20.0
+    assert resultado == pytest.approx(20.0)
 
 def test_61_minutos_costo_35(sistema):
     #Caso 8
@@ -92,7 +92,7 @@ def test_61_minutos_costo_35(sistema):
     # Act
     resultado = sistema.calcular_total(minutos, "normal", False)
     # Assert
-    assert resultado == 35.0
+    assert resultado == pytest.approx(35.0)
 
 def test_121_minutos_costo_50(sistema):
     #Caso 9
@@ -102,7 +102,7 @@ def test_121_minutos_costo_50(sistema):
     # Act
     resultado = sistema.calcular_total(minutos, "normal", False)
     # Assert
-    assert resultado == 50.0
+    assert resultado == pytest.approx(50.0)
 
 
 # Entradas inválidas:
@@ -137,7 +137,7 @@ def test_cliente_frecuente_costo_18(sistema):
     # Act
     resultado = sistema.calcular_total(minutos, "frecuente", False)
     # Assert
-    assert resultado == 18.0
+    assert resultado == pytest.approx(18.0)
 
 def test_cliente_frecuente_boleto_perdido(sistema):
     #Caso 13
@@ -147,7 +147,7 @@ def test_cliente_frecuente_boleto_perdido(sistema):
     # Act
     resultado = sistema.calcular_total(minutos, "frecuente", True)
     # Assert
-    assert resultado == 300.0
+    assert resultado == pytest.approx(300.0)
 
 
 #Decimales:
@@ -160,7 +160,7 @@ def test_costo_con_decimales(sistema):
     # Act
     resultado = sistema.calcular_total(minutos, "frecuente", False)
     # Assert
-    assert resultado == 31.5
+    assert resultado == pytest.approx(31.5)
 
 
 #Caso adicional:
@@ -173,7 +173,7 @@ def test_0_minutos_boleto_perdido(sistema):
     # Act
     resultado = sistema.calcular_total(minutos, "normal", True)
     # Assert
-    assert resultado == 300.0
+    assert resultado == pytest.approx(300.0)
 
 
 # TODO:
